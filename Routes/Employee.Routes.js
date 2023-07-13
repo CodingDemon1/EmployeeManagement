@@ -28,12 +28,12 @@ EmployeeRouter.get("/", async (req, res) => {
 		const { pageNo, Salary, Department, FirstName } = req.query;
 
 		let query = [];
-		if (FirstName) {
-			let searching = {
-				$regexMatch: { input: "$FirstName", regex: FirstName },
-			};
-			query.push(searching);
-		}
+		// if (FirstName) {
+		// 	let searching = {
+		// 		$regexMatch: { input: "$FirstName", regex: FirstName },
+		// 	};
+		// 	query.push(searching);
+		// }
 		if (Department) {
 			let filtering = { $match: { Department } };
 			query.push(filtering);
